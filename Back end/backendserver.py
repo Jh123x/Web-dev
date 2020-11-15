@@ -20,9 +20,8 @@ async def handle(websocket:WebSocketCommonProtocol, path):
         result = parser.parse(parsed_data)
         await websocket.send(result)
 
-    except websockets.ConnectionClosedError:
+    except (websockets.ConnectionClosedError, websockets.exceptions.ConnectionClosedOK):
         print(f"Disconnected {path}")
-        
 
 if __name__ == "__main__":
     start_server = websockets.serve(handle, "192.168.1.215", 8080)
