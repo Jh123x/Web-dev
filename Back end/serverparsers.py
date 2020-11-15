@@ -18,20 +18,17 @@ class WebParser(object):
         firstname = data['fname']
         lastname = data['lname']
         return \
-        f"""
-        <b>Hello {firstname} {lastname}</b>
-        """
+        f"""<b>Hello {firstname} {lastname}</b>"""
 
     def handle_generic(self, data:dict):
         """Handle the generic case"""
 
-        return f"""
-        <b>Error Protocol not found</b>
-        """
+        return f"""<b>Error Protocol not found</b>"""
 
     def parse(self, data:dict) -> str:
         """Parse the data to json"""
         handler_type = data.get("type", "").lower()
-        # print(data)
         handler = self.parsers.get(handler_type, self.parsers["generic"])
-        return handler(data)
+        result = handler(data)
+        # print(result)
+        return result
