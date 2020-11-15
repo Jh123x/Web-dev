@@ -1,6 +1,4 @@
-var socket;
-
-function sendData(fname, lname) {
+function sendFormData() {
 
     //Get the first name and the last name stored
     const firstname = document.getElementById("fname").value;
@@ -16,8 +14,11 @@ function sendData(fname, lname) {
     dict["lname"] = lastname;
     dict["type"] = "name";
 
+    sendData(dict);
+}
+
+function sendData(dict) {
     const data = JSON.stringify(dict);
-    console.log(data);
 
     //Create a socket
     socket = new WebSocket("ws:192.168.1.215:8080");
@@ -37,5 +38,5 @@ function sendData(fname, lname) {
         elem.innerHTML = `<h1>${event.data}</h1>`;
         socket.close();
     });
-    
+
 }
