@@ -21,7 +21,7 @@ function sendData(dict) {
     const data = JSON.stringify(dict);
 
     //Create a socket
-    socket = new WebSocket("ws:192.168.1.215:8080");
+    socket = new WebSocket("ws:localhost:8080");
 
     // Listen for messages
     socket.addEventListener('message', function (event) {
@@ -34,9 +34,13 @@ function sendData(dict) {
 
     socket.addEventListener('message', function (event) {
         //Write the result to the html page
-        elem = document.getElementById("result")
-        elem.innerHTML = `<h1>${event.data}</h1>`;
+        displayResult(event.data);
         socket.close();
     });
 
+}
+
+function displayResult(data) {
+    elem = document.getElementById("result")
+    elem.innerHTML = `<h1>${data}</h1>`;
 }

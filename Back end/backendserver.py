@@ -24,7 +24,7 @@ async def handle(websocket:WebSocketCommonProtocol, path):
         print(f"Disconnected {path}")
 
 if __name__ == "__main__":
-    start_server = websockets.serve(handle, "192.168.1.215", 8080)
+    start_server = websockets.serve(handle, "localhost", 8080)
 
     asyncio.get_event_loop().run_until_complete(start_server)
     asyncio.get_event_loop().run_forever()
