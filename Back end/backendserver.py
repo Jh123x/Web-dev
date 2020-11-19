@@ -5,7 +5,7 @@ import importlib
 import serverparsers
 from websockets.protocol import WebSocketCommonProtocol
 
-parser = serverparsers.WebParser()
+parser = serverparsers.WebParser("data.db")
 
 async def handle(websocket:WebSocketCommonProtocol, path):
 

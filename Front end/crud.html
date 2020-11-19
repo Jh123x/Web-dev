@@ -28,18 +28,36 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Form<span class="sr-only">(current)</span></a>
-                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="crud.html">Crud</a>
+                    <a class="nav-link" href="form.html">Form<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Crud</a>
                 </li>
             </ul>
         </div>
     </nav>
-    
 
-
+    <div class="first-pad">
+        <div class="formData">
+            <form>
+                <div class="form-group">
+                    <label for="key">Key</label>
+                    <input type="text" class="form-control" id="key" aria-describedby="textHelp">
+                    <small id="textHelp" class="form-text text-muted">Key for the database</small>
+                </div>
+                <div class="form-group">
+                    <label for="value">Value</label>
+                    <input type="text" class="form-control" id="value">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="crud('post')">Add</button>
+                <button type="button" class="btn btn-primary" onclick="crud('get')">Get</button>
+                <button type="button" class="btn btn-primary" onclick="crud('remove')">Remove</button>
+                <button type="button" class="btn btn-primary" onclick="crud('update')">Update</button>
+            </form>
+            <div id="result"></div>
+        </div>
+    </div>
 </body>
 
 <!-- Load the JS last -->
