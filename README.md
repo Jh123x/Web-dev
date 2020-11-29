@@ -13,5 +13,5 @@ Web dev exploration project
 - [x] Make a form that can send data to backend
 - [x] Add Crud functionality
 - [ ] Add Video Streaming capabilities
-- [ ] Check if it works when deployed onto a local server
+- [x] Check if it works when deployed onto a local server
 {More to be added}
